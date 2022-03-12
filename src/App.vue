@@ -1,4 +1,15 @@
 <script setup>
+// To do:
+// - Animation
+// - Reject duplicates
+// - Curate emoji list
+// - Modernize RandomEmoji.vue
+// - Test on a few browser sizes and mobile
+// - Deploy to eg. S3
+// - Make number of wheels configurable, at least a const
+// - Get headline title and html-title from optional query param
+// - Add favicon
+
 import { ref } from 'vue'
 import RandomEmoji from './components/RandomEmoji.vue'
 

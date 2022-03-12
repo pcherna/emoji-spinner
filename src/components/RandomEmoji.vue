@@ -1,6 +1,6 @@
 <template>
     <div v-if="emoji" class="inline text-8xl">{{ emoji }}</div>
-    <div v-else class="inline text-8xl opacity-50">⭐</div>
+    <div v-else class="inline text-8xl opacity-0">⭐</div>
 </template>
 
 <script>
