@@ -50,7 +50,7 @@ function reset() {
 <template>
 <div class="bg-gradient-to-br from-yellow-50 to-orange-200 w-full h-screen">
   <div>
-    <div class="p-8 text-header">Emoji Spinner {{ WHEELS }}</div>
+    <div class="p-8 text-header">Emoji Spinner</div>
     <div class="pb-6">
       <button class="btn btn-primary mr-3" type="button" :disabled="wheel >= WHEELS" @click="spin()">Spin</button>
       <button class="btn btn-secondary mr-3" type="button" :disabled="wheel == 0" @click="respin()">Respin</button>
