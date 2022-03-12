@@ -6,19 +6,21 @@
 // - Modernize RandomEmoji.vue
 // - Test on a few browser sizes and mobile
 // - Deploy to eg. S3
-// - Make number of wheels configurable, at least a const
 // - Get headline title and html-title from optional query param
 // - Add favicon
 
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import EmojiWheel from './components/EmojiWheel.vue'
 
-const wheel = ref(0)
-const trigger = ref([0, 0, 0, 0, 0])
+const WHEELS = 5
 
+const wheel = ref(0)
+const trigger = ref([])
+
+onMounted(() => reset())
 
 function spin() {
-  if (wheel.value < 5) {
+  if (wheel.value < WHEELS) {
     trigger.value[wheel.value]++
     wheel.value++
   }
@@ -37,13 +39,9 @@ function undo() {
 }
 
 function reset() {
-  if (wheel.value > 0) {
-    wheel.value = 0
-    trigger.value[0] = 0
-    trigger.value[1] = 0
-    trigger.value[2] = 0
-    trigger.value[3] = 0
-    trigger.value[4] = 0
+  wheel.value = 0
+  for (let i = 0; i < WHEELS; i++) {
+  trigger.value[i] = 0
   }
 }
 </script>
@@ -51,9 +49,9 @@ function reset() {
 <template>
 <div class="bg-gradient-to-br from-yellow-50 to-orange-200 w-full h-screen">
   <div>
-    <div class="p-8 text-header">Emoji Spinner</div>
+    <div class="p-8 text-header">Emoji Spinner {{ WHEELS }}</div>
     <div class="pb-6">
-      <button class="btn btn-primary mr-3" type="button" :disabled="wheel >= 5" @click="spin()">Spin</button>
+      <button class="btn btn-primary mr-3" type="button" :disabled="wheel >= WHEELS" @click="spin()">Spin</button>
       <button class="btn btn-secondary mr-3" type="button" :disabled="wheel == 0" @click="respin()">Respin</button>
       <button class="btn btn-secondary mr-3" type="button" :disabled="wheel == 0" @click="undo()">Undo</button>
       <button class="btn btn-secondary" type="button" :disabled="wheel == 0" @click="reset()">Reset</button>
@@ -61,11 +59,12 @@ function reset() {
   </div>
 
   <div class="inline">
-    <EmojiWheel class="mr-4" :trigger="trigger[0]"/>
-    <EmojiWheel class="mr-4" :trigger="trigger[1]"/>
-    <EmojiWheel class="mr-4" :trigger="trigger[2]"/>
-    <EmojiWheel class="mr-4" :trigger="trigger[3]"/>
-    <EmojiWheel class="mr-4" :trigger="trigger[4]"/>
+    <EmojiWheel
+      v-for="(item, index) in trigger"
+      :key="index"
+      :trigger="trigger[index]"
+      class="mr-4">
+    </EmojiWheel>
   </div>  
 </div>
 </template>
