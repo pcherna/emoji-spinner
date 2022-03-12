@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .text-header {
+        @apply text-center text-4xl font-medium text-indigo-800 pb-8
+    }
+    .text-body {
+        @apply text-2xl font-light text-indigo-900 leading-normal space-y-8
+    }
+    .text-label {
+        @apply text-lg font-light text-indigo-900
+    }
+    .btn {
+        @apply inline-block px-4 py-2 rounded-lg focus:outline-none focus:ring focus:ring-offset-2 tracking-wider font-semibold text-lg sm:text-base disabled:opacity-30
+    }
+    .btn-primary {
+        @apply bg-indigo-700 hover:bg-indigo-600 focus:ring-indigo-700 focus:ring-opacity-50 active:bg-indigo-800 text-white 
+    }
+    .btn-secondary {
+        @apply bg-indigo-500 hover:bg-indigo-400 focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-600 text-indigo-50 
+    }
+}

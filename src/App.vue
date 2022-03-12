@@ -39,22 +39,33 @@ function reset() {
 </script>
 
 <template>
-<div>
+<div class="bg-gradient-to-br from-yellow-50 to-orange-200">
   <div>
-    <div>Wheel: {{ emojiWheel }}</div>
-    <button type="button" :disabled="emojiWheel >= 5" @click="spin()">Spin</button>
-    <button type="button" :disabled="emojiWheel == 0" @click="respin()">Respin</button>
-    <button type="button" :disabled="emojiWheel == 0" @click="undo()">Undo</button>
-    <button type="button" :disabled="emojiWheel == 0" @click="reset()">Reset</button>
+    <div class="text-header pb-6">Emoji Spinner</div>
+    <div class="pb-6">
+      <button class="btn btn-primary mr-3" type="button" :disabled="emojiWheel >= 5" @click="spin()">Spin</button>
+      <button class="btn btn-secondary mr-3" type="button" :disabled="emojiWheel == 0" @click="respin()">Respin</button>
+      <button class="btn btn-secondary mr-3" type="button" :disabled="emojiWheel == 0" @click="undo()">Undo</button>
+      <button class="btn btn-secondary" type="button" :disabled="emojiWheel == 0" @click="reset()">Reset</button>
+    </div>
   </div>
 
-  <div>
-    <div>Result:</div>
-    <RandomEmoji :trigger="spinner[0]"/>
-    <RandomEmoji :trigger="spinner[1]"/>
-    <RandomEmoji :trigger="spinner[2]"/>
-    <RandomEmoji :trigger="spinner[3]"/>
-    <RandomEmoji :trigger="spinner[4]"/>
+  <div class="flex">
+    <div class="mr-4">
+      <RandomEmoji :trigger="spinner[0]"/>
+    </div>
+    <div class="mr-4">
+      <RandomEmoji :trigger="spinner[1]"/>
+    </div>
+    <div class="mr-4">
+      <RandomEmoji :trigger="spinner[2]"/>
+    </div>
+    <div class="mr-4">
+      <RandomEmoji :trigger="spinner[3]"/>
+    </div>
+    <div class="mr-4">
+      <RandomEmoji :trigger="spinner[4]"/>
+    </div>
   </div>  
 </div>
 </template>
