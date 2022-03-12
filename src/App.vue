@@ -39,9 +39,9 @@ function reset() {
 </script>
 
 <template>
-<div class="bg-gradient-to-br from-yellow-50 to-orange-200">
+<div class="bg-gradient-to-br from-yellow-50 to-orange-200 w-full h-screen">
   <div>
-    <div class="text-header pb-6">Emoji Spinner</div>
+    <div class="p-8 text-header">Emoji Spinner</div>
     <div class="pb-6">
       <button class="btn btn-primary mr-3" type="button" :disabled="emojiWheel >= 5" @click="spin()">Spin</button>
       <button class="btn btn-secondary mr-3" type="button" :disabled="emojiWheel == 0" @click="respin()">Respin</button>
@@ -50,22 +50,12 @@ function reset() {
     </div>
   </div>
 
-  <div class="flex">
-    <div class="mr-4">
-      <RandomEmoji :trigger="spinner[0]"/>
-    </div>
-    <div class="mr-4">
-      <RandomEmoji :trigger="spinner[1]"/>
-    </div>
-    <div class="mr-4">
-      <RandomEmoji :trigger="spinner[2]"/>
-    </div>
-    <div class="mr-4">
-      <RandomEmoji :trigger="spinner[3]"/>
-    </div>
-    <div class="mr-4">
-      <RandomEmoji :trigger="spinner[4]"/>
-    </div>
+  <div class="inline">
+    <RandomEmoji class="mr-4" :trigger="spinner[0]"/>
+    <RandomEmoji class="mr-4" :trigger="spinner[1]"/>
+    <RandomEmoji class="mr-4" :trigger="spinner[2]"/>
+    <RandomEmoji class="mr-4" :trigger="spinner[3]"/>
+    <RandomEmoji class="mr-4" :trigger="spinner[4]"/>
   </div>  
 </div>
 </template>
@@ -77,6 +67,5 @@ function reset() {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
