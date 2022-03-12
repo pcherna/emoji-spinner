@@ -13,38 +13,37 @@
 import { ref } from 'vue'
 import RandomEmoji from './components/RandomEmoji.vue'
 
-const emojiWheel = ref(0)
-const spinner = ref([0, 0, 0, 0, 0])
+const wheel = ref(0)
+const trigger = ref([0, 0, 0, 0, 0])
 
 
 function spin() {
-  if (emojiWheel.value < 5) {
-    spinner.value[emojiWheel.value]++
-    emojiWheel.value++
+  if (wheel.value < 5) {
+    trigger.value[wheel.value]++
+    wheel.value++
   }
 }
 
 function respin() {
-  if (emojiWheel.value > 0) {
-    let wheel = emojiWheel.value - 1
-    spinner.value[wheel]++
+  if (wheel.value > 0) {
+    trigger.value[wheel.value - 1]++
   }
 }
 function undo() {
-  if (emojiWheel.value > 0) {
-    emojiWheel.value--
-    spinner.value[emojiWheel.value] = 0
+  if (wheel.value > 0) {
+    wheel.value--
+    trigger.value[wheel.value] = 0
   }
 }
 
 function reset() {
-  if (emojiWheel.value > 0) {
-    emojiWheel.value = 0
-    spinner.value[0] = 0
-    spinner.value[1] = 0
-    spinner.value[2] = 0
-    spinner.value[3] = 0
-    spinner.value[4] = 0
+  if (wheel.value > 0) {
+    wheel.value = 0
+    trigger.value[0] = 0
+    trigger.value[1] = 0
+    trigger.value[2] = 0
+    trigger.value[3] = 0
+    trigger.value[4] = 0
   }
 }
 </script>
@@ -54,19 +53,19 @@ function reset() {
   <div>
     <div class="p-8 text-header">Emoji Spinner</div>
     <div class="pb-6">
-      <button class="btn btn-primary mr-3" type="button" :disabled="emojiWheel >= 5" @click="spin()">Spin</button>
-      <button class="btn btn-secondary mr-3" type="button" :disabled="emojiWheel == 0" @click="respin()">Respin</button>
-      <button class="btn btn-secondary mr-3" type="button" :disabled="emojiWheel == 0" @click="undo()">Undo</button>
-      <button class="btn btn-secondary" type="button" :disabled="emojiWheel == 0" @click="reset()">Reset</button>
+      <button class="btn btn-primary mr-3" type="button" :disabled="wheel >= 5" @click="spin()">Spin</button>
+      <button class="btn btn-secondary mr-3" type="button" :disabled="wheel == 0" @click="respin()">Respin</button>
+      <button class="btn btn-secondary mr-3" type="button" :disabled="wheel == 0" @click="undo()">Undo</button>
+      <button class="btn btn-secondary" type="button" :disabled="wheel == 0" @click="reset()">Reset</button>
     </div>
   </div>
 
   <div class="inline">
-    <RandomEmoji class="mr-4" :trigger="spinner[0]"/>
-    <RandomEmoji class="mr-4" :trigger="spinner[1]"/>
-    <RandomEmoji class="mr-4" :trigger="spinner[2]"/>
-    <RandomEmoji class="mr-4" :trigger="spinner[3]"/>
-    <RandomEmoji class="mr-4" :trigger="spinner[4]"/>
+    <RandomEmoji class="mr-4" :trigger="trigger[0]"/>
+    <RandomEmoji class="mr-4" :trigger="trigger[1]"/>
+    <RandomEmoji class="mr-4" :trigger="trigger[2]"/>
+    <RandomEmoji class="mr-4" :trigger="trigger[3]"/>
+    <RandomEmoji class="mr-4" :trigger="trigger[4]"/>
   </div>  
 </div>
 </template>
