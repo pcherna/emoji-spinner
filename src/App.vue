@@ -1,5 +1,6 @@
 <script setup>
 // To do:
+// - Would switching ref() -> reactive() clean up code?
 // - Animation
 // - Reject duplicates
 // - Curate emoji list
@@ -15,33 +16,33 @@ import EmojiWheel from './components/EmojiWheel.vue'
 const WHEELS = 5
 
 const wheel = ref(0)
-const trigger = ref([])
+const triggers = ref([])
 
 onMounted(() => reset())
 
 function spin() {
   if (wheel.value < WHEELS) {
-    trigger.value[wheel.value]++
+    triggers.value[wheel.value]++
     wheel.value++
   }
 }
 
 function respin() {
   if (wheel.value > 0) {
-    trigger.value[wheel.value - 1]++
+    triggers.value[wheel.value - 1]++
   }
 }
 function undo() {
   if (wheel.value > 0) {
     wheel.value--
-    trigger.value[wheel.value] = 0
+    triggers.value[wheel.value] = 0
   }
 }
 
 function reset() {
   wheel.value = 0
   for (let i = 0; i < WHEELS; i++) {
-  trigger.value[i] = 0
+  triggers.value[i] = 0
   }
 }
 </script>
@@ -60,9 +61,9 @@ function reset() {
 
   <div class="inline">
     <EmojiWheel
-      v-for="(item, index) in trigger"
+      v-for="(item, index) in triggers"
       :key="index"
-      :trigger="trigger[index]"
+      :trigger="triggers[index]"
       class="mr-4">
     </EmojiWheel>
   </div>  
