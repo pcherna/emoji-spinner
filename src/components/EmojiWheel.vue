@@ -3,8 +3,35 @@
     <div v-else class="inline text-8xl opacity-0">⭐</div>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue'
+const emoji = ref("")
 
+function selectEmoji() {
+  console.log(`New selectEmoji ${emojiList.length}`)
+  let emojiIndex = Math.floor(Math.random() * emojiList.length)
+  emoji.value = emojiList[emojiIndex]
+}
+function clearEmoji() {
+  emoji.value = ""
+}
+
+// ZZZ: Need to declare trigger as a new-style prop somehow
+// watch(trigger,
+//   (newValue) => {
+//           console.log(`NEW -> ${newValue}`)
+//           // console.log(`NEW ${oldValue} -> ${newValue}`)
+//           // if (newValue) {
+//           //     this.selectEmoji()
+//           // } else {
+//           //     this.clearEmoji()
+//           // }
+//   }
+// )
+
+</script>
+
+<script>
 const emojiList = [
     "🙈", // See-No-Evil Monkey
     "🙉", // Hear-No-Evil Monkey
@@ -212,52 +239,19 @@ const emojiList = [
 ]
 
 export default {
-  name: 'RandomEmoji',
+  name: 'EmojiWheel',
   props: {
     trigger: Number
   },
-  data() {
-      return {
-          emoji: "",
-      }
-  },
   watch: {
       trigger(newValue, oldValue) {
-          console.log(`trigger ${oldValue} -> ${newValue}`)
+          console.log(`old trigger ${oldValue} -> ${newValue}`)
           if (newValue) {
               this.selectEmoji()
           } else {
               this.clearEmoji()
           }
       }
-  },
-  methods: {
-      selectEmoji() {
-          console.log(`${emojiList.length}`)
-          let emojiIndex = Math.floor(Math.random() * emojiList.length)
-          this.emoji = emojiList[emojiIndex]
-      },
-      clearEmoji() {
-          this.emoji = ""
-      }
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>

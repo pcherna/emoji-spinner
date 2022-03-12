@@ -11,7 +11,7 @@
 // - Add favicon
 
 import { ref } from 'vue'
-import RandomEmoji from './components/RandomEmoji.vue'
+import EmojiWheel from './components/EmojiWheel.vue'
 
 const wheel = ref(0)
 const trigger = ref([0, 0, 0, 0, 0])
@@ -61,11 +61,11 @@ function reset() {
   </div>
 
   <div class="inline">
-    <RandomEmoji class="mr-4" :trigger="trigger[0]"/>
-    <RandomEmoji class="mr-4" :trigger="trigger[1]"/>
-    <RandomEmoji class="mr-4" :trigger="trigger[2]"/>
-    <RandomEmoji class="mr-4" :trigger="trigger[3]"/>
-    <RandomEmoji class="mr-4" :trigger="trigger[4]"/>
+    <EmojiWheel class="mr-4" :trigger="trigger[0]"/>
+    <EmojiWheel class="mr-4" :trigger="trigger[1]"/>
+    <EmojiWheel class="mr-4" :trigger="trigger[2]"/>
+    <EmojiWheel class="mr-4" :trigger="trigger[3]"/>
+    <EmojiWheel class="mr-4" :trigger="trigger[4]"/>
   </div>  
 </div>
 </template>
