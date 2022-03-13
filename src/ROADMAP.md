@@ -4,7 +4,6 @@
 
 * Would switching ref() -> reactive() clean up code?
 * Animation
-* Modernize RandomEmoji.vue
 
 ## Next
 
