@@ -13,8 +13,12 @@
 * Deploy to eg. S3
 * Get headline title and html-title from optional query param
 * Add favicon
+* Keyboard shortcuts
 
 ## Later
 
-* Some emoji don't render on older OSes, work on filtering those out
 * Reject duplicates
+
+## Bugs
+
+* Some emoji don't render on older OSes, work on filtering those out
