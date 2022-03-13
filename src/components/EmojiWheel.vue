@@ -50,7 +50,7 @@ watch(() => props.trigger,
       :initial="{ opacity: 0, scale: 0 }"
       :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 200, duration: 2000 } }"
       :leave="{ opacity: 0, scale: 0 }"
-      class="inline-flex text-8xl"
+      class="inline-flex text-9xl"
     >
       {{ emoji }}
     </div>
