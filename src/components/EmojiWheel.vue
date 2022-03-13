@@ -245,7 +245,7 @@ export default {
   },
   watch: {
       trigger(newValue, oldValue) {
-          console.log(`old trigger ${oldValue} -> ${newValue}`)
+          console.log(`trigger ${oldValue} -> ${newValue}`)
           if (newValue) {
               this.selectEmoji()
           } else {
