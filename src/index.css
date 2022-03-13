@@ -4,7 +4,7 @@
 
 @layer components {
     .text-header {
-        @apply text-center text-4xl sm:text-5xl font-medium text-indigo-800 pb-8
+        @apply text-center text-4xl sm:text-5xl font-black text-indigo-800 pb-8
     }
     .text-body {
         @apply text-2xl font-light text-indigo-900 leading-normal space-y-8
