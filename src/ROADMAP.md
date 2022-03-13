@@ -2,11 +2,11 @@
 
 ## Soon
 
-* Animation
+* "Leave" animation
 
 ## Next
 
-* Curate emoji list
+* Apply skin tone where possible
 * Test on a few browser sizes and mobile
 * Deploy to eg. S3
 * Get headline title and html-title from optional query param
