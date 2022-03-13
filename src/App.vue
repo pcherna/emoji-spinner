@@ -1,14 +1,4 @@
 <script setup>
-// To do:
-// - Would switching ref() -> reactive() clean up code?
-// - Animation
-// - Reject duplicates
-// - Curate emoji list
-// - Modernize RandomEmoji.vue
-// - Test on a few browser sizes and mobile
-// - Deploy to eg. S3
-// - Get headline title and html-title from optional query param
-// - Add favicon
 
 import { onMounted, ref } from 'vue'
 import EmojiWheel from './components/EmojiWheel.vue'

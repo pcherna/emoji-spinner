@@ -1,7 +1,18 @@
-# Vue 3 + Vite
+# emoji-spinner
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A teacher friend wants to use random emoji as story-writing prompts, so this is a website that lets you display random emoji one at a time.
 
-## Recommended IDE Setup
+## Usage
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+There are several buttons:
+
+* **Spin**: Pick the next emoji
+* **Respin**: If you don't last the last picked emoji, pick a fresh one
+* **Undo**: Remove the last picked emoji
+* **Restart**: Remove all the emoji
+
+The Emoji Spinner shows up to five emoji.
+
+## Technical
+
+Built with Vue 3, TailwindCSS, and Vite.
