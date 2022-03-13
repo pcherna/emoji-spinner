@@ -64,7 +64,8 @@ onKeyStroke(['Escape'], (e) => {
 <template>
 <div class="bg-gradient-to-br from-yellow-50 to-orange-200 w-full h-screen">
   <div>
-    <div class="p-8 text-header">Emoji Spinner</div>
+
+    <div class="p-6 sm:p-8 text-header">Emoji Spinner</div>
     <div class="pb-12">
       <button class="btn btn-primary mr-4" type="button" :disabled="wheel >= WHEELS" @click="spin()">Spin</button>
       <button class="btn btn-secondary mr-4" type="button" :disabled="wheel == 0" @click="respin()">Respin</button>

@@ -4,7 +4,7 @@
 
 @layer components {
     .text-header {
-        @apply text-center text-4xl font-medium text-indigo-800 pb-8
+        @apply text-center text-4xl sm:text-5xl font-medium text-indigo-800 pb-8
     }
     .text-body {
         @apply text-2xl font-light text-indigo-900 leading-normal space-y-8
@@ -13,7 +13,7 @@
         @apply text-lg font-light text-indigo-900
     }
     .btn {
-        @apply inline-block px-4 py-2 rounded-xl focus:outline-none focus:ring focus:ring-offset-2 tracking-wider font-semibold text-2xl disabled:opacity-30
+        @apply inline-block px-4 py-2 rounded-lg sm:rounded-xl focus:outline-none focus:ring focus:ring-offset-2 tracking-wider font-semibold text-base sm:text-2xl md:text-3xl xl:text-4xl disabled:opacity-30
     }
     .btn-primary {
         @apply bg-indigo-800 hover:bg-indigo-700 focus:ring-indigo-800 focus:ring-opacity-50 active:bg-indigo-900 text-indigo-100 
