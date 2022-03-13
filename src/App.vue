@@ -66,9 +66,9 @@ onKeyStroke(['Escape'], (e) => {
   <div>
     <div class="p-8 text-header">Emoji Spinner</div>
     <div class="pb-12">
-      <button class="btn btn-primary mr-3" type="button" :disabled="wheel >= WHEELS" @click="spin()">Spin</button>
-      <button class="btn btn-secondary mr-3" type="button" :disabled="wheel == 0" @click="respin()">Respin</button>
-      <button class="btn btn-secondary mr-3" type="button" :disabled="wheel == 0" @click="undo()">Undo</button>
+      <button class="btn btn-primary mr-4" type="button" :disabled="wheel >= WHEELS" @click="spin()">Spin</button>
+      <button class="btn btn-secondary mr-4" type="button" :disabled="wheel == 0" @click="respin()">Respin</button>
+      <button class="btn btn-secondary mr-4" type="button" :disabled="wheel == 0" @click="undo()">Undo</button>
       <button class="btn btn-secondary" type="button" :disabled="wheel == 0" @click="reset()">Reset</button>
     </div>
   </div>
