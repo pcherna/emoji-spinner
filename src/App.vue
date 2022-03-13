@@ -1,5 +1,6 @@
 <script setup>
 import { onMounted, ref } from 'vue'
+import { onKeyStroke } from '@vueuse/core'
 import EmojiWheel from './components/EmojiWheel.vue'
 
 const WHEELS = 5
@@ -34,6 +35,30 @@ function reset() {
   triggers.value[i] = 0
   }
 }
+
+// Hotkey: Space => Spin
+onKeyStroke([' '], (e) => {
+  e.preventDefault()
+  spin()
+})
+
+// Hotkey: Enter => Respin
+onKeyStroke(['Enter'], (e) => {
+  e.preventDefault()
+  respin()
+})
+
+// Hotkey: Backspace => Undo
+onKeyStroke(['Backspace'], (e) => {
+  e.preventDefault()
+  undo()
+})
+
+// Hotkey: Escape => Undo
+onKeyStroke(['Escape'], (e) => {
+  e.preventDefault()
+  reset()
+})
 </script>
 
 <template>

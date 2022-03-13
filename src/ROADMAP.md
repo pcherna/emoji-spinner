@@ -2,7 +2,6 @@
 
 ## Soon
 
-* Would switching ref() -> reactive() clean up code?
 * Animation
 
 ## Next
@@ -12,7 +11,6 @@
 * Deploy to eg. S3
 * Get headline title and html-title from optional query param
 * Add favicon
-* Keyboard shortcuts
 
 ## Later
 
